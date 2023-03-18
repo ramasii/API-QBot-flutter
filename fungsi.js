@@ -42,7 +42,6 @@ function informasiSurat(entitySurah1, entitySurah2){
     var Step = 0;
     try {
         Step = 1; // Deklarasi variabel ambil dari ./data/context-informasi.json
-        // console.log("dataInformasi.informasi[entitySurah1] =", dataInformasi.informasi[entitySurah1])
         var info = dataInformasi.informasi[entitySurah1] ? dataInformasi.informasi[entitySurah1] : dataInformasi.informasi[entitySurah2],
         mukadimah = info['mukadimah'],
         keimanan = info['keimanan'],

@@ -21,7 +21,7 @@
   },
   {
     "intent":"qurani.ayatAcak",
-    "utterances":["acak","random","tes","test","coba","garputala","garpu tala"],
+    "utterances":["acak","random","tes", "garputala","garpu tala"],
     "tests":["acak ayat", "ayat acak"],
     "answers":["jawaban di console.log"],
     "actions": ["Tafsir Kemenag @surah:@ayat","Tafsir Muyassar @surah:@ayat","Tafsir Jalalayn@surah:@ayat","Tafsir Ringkas @surah:@ayat","Share @surah:@ayat","Bantuan"]
