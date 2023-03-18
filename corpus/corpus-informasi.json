@@ -1,0 +1,13 @@
+{
+    "name":"Corpus Tentang",
+    "locale":"id-ID",
+    "contextData":"./data/context-informasi.json",
+    "data":[
+        {
+            "intent":"qurani.informasiSurat",
+            "utterances":["@surah","@surah surat ke berapa?", "tentang @surah", "tentang surat @surah", "tentang surah @surah"],
+            "answers":["jawaban di console"],
+            "actions": ["Acak Ayat", "Share Acak", "Bantuan"]
+        }
+    ]
+}

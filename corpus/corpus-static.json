@@ -1,0 +1,176 @@
+{
+    "name": "Corpus-qurani-static",
+    "locale": "id-ID",
+    "contextData":"./data/context-static.json",
+    "data": [
+        {
+            "intent":"qurani.perkenalan",
+            "utterances":[
+                "hi","hei","heyyyyyy","halo","perkenalan","hai","halo","hola","pagi","siang","sore","malam","selamat pagi","selamat siang","selamat sore","selamat malam","hello","hey","apa kabar","bagaimana kabarnya","kabar baik","jumpa lagi","salam kenal",
+                "nama saya","perkenalkan nama saya","senang bertemu dengan anda","bagaimana hari anda","ada yang bisa saya bantu","sudah makan","priben","priben kabare",
+                "terima kasih sudah bertemu dengan saya","salam sejahtera","salam sukses","bang","sampurasun","sampurasun sadayana","nara gerotelo","boha","horas","apa kareba","aga kareba?",
+                "ola","ciao","oi","ahlan","ahlan wa sahlan","shukran"
+            ],
+            "tests":["hi","halo halo","Perkenalan bang","hai","halo","pagi","siang","sore","malam"],
+            "answers":["Assalamualaikum... QuraniBot siap menjawab sejumlah pertanyaan terkait Al-Quran. Silahkan ketik pertanyaan sesuai format yang ada. Ketik bantuan jika perlu bantuan atau ada kesulitan.\n \n{{_data.dibuatOleh}}"],
+            "actions":["Acak Ayat","Share Acak","Bantuan"]
+        },
+        {
+            "intent":"qurani.salam",
+            "utterances":[  
+                "salam","masal", "lamas", "samal", "lamis", "masla", "lasam", "salma", "alsam", "malsa", "slama", "asalam", "salamm","malas",
+                "assalamualaikum", "assalamualikum", "assalamualaikim", "assalamu'alaykum", "assalamu'alaikim", "assalamu'alaykym", "assalamu'alykum", "assalamualaykum", "assalamualykum", "assalamulaikum", "assalammualaikum", "assalamualaikom",
+                "assalaamualaikum", "assalaamualikum", "assalaamualaikim", "assalaamu'alaykum", "assalaamu'alaikim", "assalaamu'alaykym", "assalaamu'alykum", "assalaamualaykum", "assalaamualykum", "assalaamulaikum", "assalammualaikum",
+                "assalamu'alaikum", "assalamu'alikum", "assalamu'alaikim", "assalamu'alaykym", "assalamu'alykum", "assalamualaykum", "assalamualykum", "assalamulaikum", "assalammualaikum", "assalaamu alaikum", "assalam alaikum",
+                "assalaamu'alaikum", "assalaamu'alikum", "assalaamu'alaikim", "assalaamu'alaykym", "assalaamu'alykum", "assalaamualaykum", "assalaamualykum", "assalaamulaikum", "assalammualaikum", "assalaamu alaikum", "assalamu alaikum",
+                "asalamualaikum", "asalamualikum", "asalamualaikim", "asalamu'alaykum", "asalamu'alaikim", "asalamu'alaykym", "asalamu'alykum", "asalamualaykum", "asalamualykum", "asalamulaikum", "asalammualaikum",
+                "salamo", "omals", "lamso", "molass", "slamo", "loams", "samol", "somal", "oslam", "losam", "salom", "mlikum", "mlekom",
+                "syalom", "loyams", "salyom", "myloas", "yamlos", "osylam", "mysola", "laymos", "losamy", "slamyo", "somlay"  
+            ],
+            "tests":["Salam","Assalamualaikum","Assalaamualaikum","Assalamu'alaikum","Assalaamu'alaikum"],
+            "answers":["Waalaikumsalaam... QuraniBot siap menjawab sejumlah pertanyaan terkait Al-Quran. Silahkan ketik pertanyaan sesuai format yang ada. Ketik bantuan jika perlu bantuan atau ada kesulitan.\n \n{{_data.dibuatOleh}}"],
+            "actions":["Acak Ayat","Share Acak","Bantuan"]
+        },
+        {
+            "intent":"qurani.terimaKasih",
+            "utterances":["@terimakasih"],
+            "answers":["Terima kasih telah menggunakan QuraniBot. Semoga menjadi kebaikan dan manfaat untuk dunia dan akhirat kita semua. Aamiin.\n \n{{_data.dibuatOleh}}"],
+            "actions":["Acak Ayat","Share Acak","Bantuan"]
+        },
+        {
+            "intent":"qurani.bantuan",
+            "utterances":[
+                "bantuan", "panduan", "tutorial", "tolong", "tulung", "tulungono","tolongkeun","tolongken", "bimbingan", "arahan", "need help", "petunjuk", "dukungan", "fasilitasi", "pendampingan", "sokongan", "bantu", "bantuannya", "bantuin", "ngasih tau", "kasih tau", "tutor", "pandu", "ngebantu", "memandu", "nyuwun tulung", "tulong", "turungi", "ambali", "ewaika", "lelah", "frustasi", "ga mampu", "kewalahan", "kesasar",
+                "carane", "cara", "piye", "kepriye", "infokan", "bagaimana", "gimana", "gmana", "kayak gimana", "bagaimanakah", "kayak apa", "gimana caranya", "gimana caranya ya", "mengapa", "apa", "kapan", "dimana", "siapa", "bagaimana cara", "caramu", "carami", "caramu", "cara kamu", "caranya", "cara dia", "cara saya", "gimana cara", "cara ngapain", "cara apa", "cara begini", "cara begitu", "terbebani", "berat", "abot",
+                "help", "helep", "hlp", "tolongen", "bantu", "bantuannya", "bantuin", "bantu dong", "tolong dong", "tlong", "tlongin", "bisa bantu", "bisa tolong", "bisa tolongin", "kasih bantuan", "mohon bantuannya", "saya butuh bantuan", "tolong ya", "tolonglah", "tolong dong", "mau minta tolong", "mau minta bantuan", "aku butuh bantuan", "tolong mi", "diolas","tak kuat", "ajarin", "bagemana", "ga sanggup", "tidak berdaya",
+                "info", "infokan", "informasi", "penjelasan", "keterangan", "data", "berita", "fakta", "edukasi", "pemberitahuan", "pemberitahuan penting", "beritahu", "kabar", "kabar terbaru", "informasikan", "laporan", "laporan terbaru", "lengkapin", "sampaikan informasi", "berikan informasi", "tahu info", "minta info", "kadulu", "tolonga", "ammali", "njaluk tulung", "putus asa", "menyerah", "give up", "ga kuat","ora sanggup"
+            ],
+            "tests":["Bantuan","Panduan","mau Tutorial"],
+            "answers":["QuraniBot adalah chatbot berbasis Artificial Intelligence (AI) yang membantu menjawab berbagai pertanyaan terkait Al-Quran\n \nSilahkan kirim chat ke nomor ini dengan format sebagai berikut\n \n1. Ayat tertentu. Sebutkan nama/nomor surat dan nomor ayat\n     Contoh: Al-Baqarah:183\n     Contoh: Al-Baqarah ayat 183\n     Contoh: 2:183\n     Contoh: 2 ayat 183\n \n2. Ayat sekian sampai sekian. Sebutkan nama/nomor surat dan nomor ayat awal sampai akhir\n     Contoh: Al-Baqarah:183-185\n     Contoh: Al-Baqarah ayat 183-185\n     Contoh: Al-Baqarah ayat 183 sampai 185\n     Contoh: 2:183-185\n     Contoh: 2 ayat 183-185\n     Contoh: 2:183 sampai 185\n     Contoh: 2 ayat 183 sampai 185\n \n3. Tafsir ayat tertentu\n     Contoh: Tafsir 2:183\n     Contoh: Tafsir Al-Baqarah:183\n     Contoh: Tafsir Al-Baqarah ayat 183\n \n4. Informasi surat. Sebutkan nama/nomor surat\n     Contoh: Al-Baqarah surat ke berapa?\n     Contoh: Surat ke 2 surat apa?\n     Contoh: Al-Baqarah\n     Contoh: Tentang Al-Baqarah\n     Contoh: Tentang surat Al-Baqarah\n \n5. Ayat secara acak\n     Contoh: Acak\n \n6. Share (bagikan) ayat secara acak atau ayat tertentu\n     Contoh: Share acak\n     Contoh: Share Al-Baqarah:183\n     Contoh: Share Al-Baqarah ayat 183\n     Contoh: Share 2:183\n     Contoh: Share 2 ayat 183\n \n7. Cari teks di terjemah atau teks Arab\n     Contoh: Cari surga\n     Contoh: Cari surga#2\n \n8. Set terjemahan: Indonesia, Melayu\n     Contoh: Set terjemahan melayu\n \n9. Set tafsir: Jalalayn, Kemenag, Muyassar, Ringkas\n     Contoh: Set tafsir kemenag\n \n10. Lainnya: Ayat terpendek, ayat terpanjang, surat terpendek, surat terpanjang, surat makiyah, surat madaniyah, surat makiyah dan madaniyah\n\n{{_data.dibuatOleh}}"],
+            "actions":[
+                "Al-Baqarah:183",
+                "Al-Baqarah ayat 183",
+                "2:183",
+                "2 ayat 183",
+                
+                "Al-Baqarah:183-185",
+                "Al-Baqarah ayat 183-185",
+                "Al-Baqarah ayat 183 sampai 185",
+                "2:183-185",
+                "2 ayat 183-185",
+                "2:183 sampai 185",
+                "2 ayat 183 sampai 185",
+                
+                "Tafsir 2:183",
+                "Tafsir Al-Baqarah:183",
+                "Tafsir Al-Baqarah ayat 183",
+                
+                "Al-Baqarah surat ke berapa?",
+                "Surat ke 2 surat apa?",
+                "Al-Baqarah",
+                "Tentang Al-Baqarah",
+                "Tentang surat Al-Baqarah",
+                
+                "Acak",
+                "Share Acak",
+                "Share Al-Baqarah:183",
+                "Share Al-Baqarah ayat 183",
+                "Share 2:183",
+                "Share 2 ayat 183",
+                
+                "cari surga",
+                "cari surga#2",
+                
+                "Set terjemahan melayu",
+                "Set tafsir kemenag",
+                
+                "Ayat terpendek",
+                "Ayat terpanjang",
+                "Surat terpendek",
+                "Surat terpanjang",
+                "Surat makiyah",
+                "Surat madaniyah",
+                "Surat makiyah dan madaniyah"
+                    
+            ]
+        },
+        {
+            "intent":"qurani.setTerjemahan",
+            "utterances":["set terjemahan @bahasa"],
+            "answers":["Berhasil mengubah Terjemahan ke {{ _data.bahasa[entities.bahasa.option].nama}}\n \n{{_data.dibuatOleh}}"],
+            "actions":["Acak Ayat","Share Acak","Bantuan"]
+        },
+        {
+            "intent":"qurani.setTafsir",
+            "utterances":["set tafsir @tafsir"],
+            "answers":["Berhasil mengubah Tafsir ke {{ _data.tafsir[entities.tafsir.option].nama}}\n \n{{_data.dibuatOleh}}"],
+            "actions":["Acak Ayat","Share Acak","Bantuan"]
+        },
+        {
+            "intent":"infoLainnya.suratAyat",
+            "utterances":["@info @ukuran"],
+            "tests":["ayat pendek", "ayat terpendek"],
+            "answers":["{{_data.info[entities.info.option][entities.ukuran.option]}}"],
+            "actions":["Acak Ayat","Share Acak","Bantuan"]
+        },
+        {
+            "intent":"infoLainnya.suratTurunnya",
+            "utterances":["surat @turun", "surah @turun", "surat madaniyah", "surah makkiyah"],
+            "answers":["{{_data.turun[entities.turun.option]}}"],
+            "actions":["Acak Ayat","Share Acak","Bantuan"]
+        },
+        {
+            "intent":"infoLainnya.suratTurunnya2",
+            "utterances":["surat @turun2", "surah @turun2", "surat madaniyah dan makkiyah"],
+            "answers":["{{_data.turun[entities.turun2.option]}}"],
+            "actions":["Acak Ayat","Share Acak","Bantuan"]
+        },
+        {
+            "intent":"qurani.share",
+            "utterances":["share", "bagi", "bagikan"],
+            "answers":["shareAyat"]
+        },
+        {
+            "intent":"qurani.shareAcak",
+            "utterances":["share acak", "bagi acak", "bagikan acak", "share garputala", "share garpu tala"],
+            "answers":["shareAcak"]
+        },
+        {
+            "intent":"None",
+            "utterances":[""],
+            "answers":["Maaf, QuraniBot tidak memahami permintaan Anda. Ketik bantuan untuk melihat panduan QuraniBot.\n \nQuraniBot dibuat oleh Pesantren Teknologi Modern Assalaam"],
+            "actions":["Acak Ayat","Share Acak","Bantuan"]
+        }
+    ],
+    "entities":{
+        "terimakasih":{
+            "options":{
+                "terimakasih":[
+                    "trims","thanks","thank you","terima kasih","makasih","tksi","kasih","terima","berterima kasih","tq","thx","thank u","tiba teing",
+                    "syukron","jazakallah","suon","suwun","hatur nuhun","matur nuwun","tabik","makasih banyak","nuwun sewu","nuwus","rutam nuwus","keso'on",
+                    "ma kasih","miasih","xie xie","matur suksma","makase","makaseh","amanai","tarima kasih","dangke","tarimo kasih","sukur dofu",
+                    "matur sakalangkong","makapulu sama","tinatauan","arigatou","mauliate","teurimong gaseh beh","arigato","kurrusumanga","hatur nuhun pisan",
+                    "tampi asih","odu'olo","tarima kasi'","brejen","sabah","tarima kasi","tabe","tuyung","tunas tulung","melaku tulung"
+                ]
+            }
+        },
+        "bahasa":{
+            "options":{"indonesia":["indonesia"], "melayu":["melayu"]}
+        },
+        "tafsir":{
+            "options":{"jalalayn":["jalalain","jalalayn"], "kemenag":["kemenag"], "muyassar":["muyassar"], "ringkas":["ringkas"]}
+        },
+        "info":{
+            "options":{"surah":["surat", "surah", "suroh", "surot"], "ayat":["ayat", "ayay", "aya"]}
+        },
+        "ukuran":{
+            "options":{"pendek":["pendek", "terpendek"],"panjang":["panjang","terpanjang"]}
+        },
+        "turun":{
+            "options":{"makiyah":["makiyah","mekkah"],"madaniyah":["madaniah","madaniyah", "madinah"]}
+        },
+        "turun2":{
+            "options":{"makiyahmadaniyah":["makiyah dan madaniyah", "makiyah dan madaniah", "mekkah dan madinah"]}
+        }
+    }
+}

@@ -1,0 +1,35 @@
+{
+    "name":"Corpus Tafsir",
+    "locale":"id-ID",
+    "contextData":"./data/context-tafsir.json",
+    "data":[
+        {
+            "intent":"qurani.tafsirAyatTertentu",
+            "utterances":["tafsir @tafsir @surah:@ayat"],
+            "tests":["tafsir ringkas alfatihah:1"],
+            "answers":["**{{_data[entities.tafsir.option][entities.surah.option].tafsir[entities.ayat.option].surah_id}}. {{_data[entities.tafsir.option][entities.surah.option].nama}}** ({{_data[entities.tafsir.option][entities.surah.option].arti}}) ayat {{_data[entities.tafsir.option][entities.surah.option].tafsir[entities.ayat.option].ayat_id}} \n \n{{_data[entities.tafsir.option][entities.surah.option].tafsir[entities.ayat.option].tafsir_text}}\n \n{{_data.dibuatOleh}}"],
+            "actions":[
+                "Tafsir Kemenag 2:183",
+                "Tafsir Muyassar 2:183",
+                "Tafsir Jalalain 2:183",
+                "Tafsir Ringkas 2:183",
+                "Share 2:183",
+                "Bantuan"        
+            ]
+        },
+        {
+            "intent":"qurani.tafsirDefault",
+            "utterances":["tafsir @surah:@ayat"],
+            "tests":["tafsir alfatihah:1"],
+            "answers":["**{{_data.kemenag[entities.surah.option].tafsir[entities.ayat.option].surah_id}}. {{_data.kemenag[entities.surah.option].nama}}** ({{_data.kemenag[entities.surah.option].arti}}) ayat {{_data.kemenag[entities.surah.option].tafsir[entities.ayat.option].ayat_id}} \n \n{{_data.kemenag[entities.surah.option].tafsir[entities.ayat.option].tafsir_text}}\n \n{{_data.dibuatOleh}}"],
+            "actions":[
+                "Tafsir Kemenag 2:183",
+                "Tafsir Muyassar 2:183",
+                "Tafsir Jalalain 2:183",
+                "Tafsir Ringkas 2:183",
+                "Share 2:183",
+                "Bantuan"             
+            ]
+        }
+    ]
+}

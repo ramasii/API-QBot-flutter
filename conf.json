@@ -1,0 +1,18 @@
+{
+    "settings": {
+      "nlp": {
+        "corpora": [
+          "./corpus/corpus-static.json", 
+          "./corpus/corpus-alquran.json",
+          "./corpus/corpus-tafsir.json",
+          "./corpus/corpus-informasi.json",
+          "./corpus/corpus-nomorsurah.json"
+        ]
+      },
+      "api-server": {
+        "port": 5000,
+        "serveBot": true      
+      }
+    },
+    "use": ["Basic", "LangEn","LangId", "ExpressApiServer", "DirectlineConnector", "ConsoleConnector"]
+}

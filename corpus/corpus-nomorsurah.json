@@ -1,0 +1,28 @@
+{
+    "name":"Corpus NomorSurah",
+    "locale":"id-ID",
+    "data":[
+        {
+            "intent":"nomorSurah.ayatTertentu",
+            "utterances":["@ayat:@ayat", "@ayat @info @ayat"],
+            "tests":["1:1"],
+            "answers":["panggil ayat tertentu"]
+        },
+        {
+            "intent":"nomorSurah.tafsirAyatTertentu",
+            "utterances":["tafsir @tafsir @ayat:@ayat", "@tafsir @ayat;@ayat", "tafsir @ayat @ayat"],
+            "tests":["tafsir ringkas 1:1"],
+            "answers":["tafsir ayat tertentu"]
+        },
+        {
+            "intent":"nomorSurah.infoSurat",
+            "utterances":["surat ke @ayat", "surat ke @ayat surah apa?", "@info ke @ayat @info apa?","surah @ayat", "@info @ayat", "surat @ayat"],
+            "answers":["info surah"]
+        },
+        {
+            "intent":"nomorSurah.ayatSekianSampaiSekian",
+            "utterances":["@ayat:@ayat sampai @ayat", "@ayat ayat @ayat sampai @ayat", "@ayat:@ayat-@ayat"],
+            "answers":["ayat sekian sampai sekian"]
+        }
+    ]
+}
