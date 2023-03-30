@@ -11,7 +11,7 @@ function ayatSekianSampaiSekian(entitySurah, dariIndex, sampaiIndex){
         var noSurah = alquran[entitySurah].ayat[0].nomorsurah,
         artiNm = alquran[entitySurah].arti,
         nmSurah = alquran[entitySurah].nama,
-        pesan = `${noSurah}. ${nmSurah} (${artiNm}) ayat ${alquran[entitySurah].ayat[dariIndex-1].nomorayat}-${alquran[entitySurah].ayat[sampaiIndex-1].nomorayat}`,        
+        pesan = `*${noSurah}. ${nmSurah}* (${artiNm}) ayat *${alquran[entitySurah].ayat[dariIndex-1].nomorayat}-${alquran[entitySurah].ayat[sampaiIndex-1].nomorayat}*`,        
         rangeAyat = alquran[entitySurah].ayat.slice(dariIndex-1, sampaiIndex),
         isi = '', actions = [];
 
@@ -42,6 +42,7 @@ function informasiSurat(entitySurah1, entitySurah2){
     var Step = 0;
     try {
         Step = 1; // Deklarasi variabel ambil dari ./data/context-informasi.json
+        // console.log("dataInformasi.informasi[entitySurah1] =", dataInformasi.informasi[entitySurah1])
         var info = dataInformasi.informasi[entitySurah1] ? dataInformasi.informasi[entitySurah1] : dataInformasi.informasi[entitySurah2],
         mukadimah = info['mukadimah'],
         keimanan = info['keimanan'],
@@ -50,13 +51,13 @@ function informasiSurat(entitySurah1, entitySurah2){
         lain = info['lain']
 
         Step = 2; // Jika data bukan tidak ada (-), maka ditambahkan ke pesan
-        mukadimah = keimanan != '-' ? mukadimah + '\n \nKeimanan :\n' + keimanan : mukadimah
-        mukadimah = hukum != '-' ? mukadimah + '\n \nHukum :\n' + hukum : mukadimah
-        mukadimah = kisah != '-' ? mukadimah + '\n \nKisah :\n' + kisah : mukadimah
-        mukadimah = lain != '-' ? mukadimah + '\n \nLainnya :\n' + lain : mukadimah
+        mukadimah = keimanan != '-' ? mukadimah + '\n \n*Keimanan :*\n' + keimanan : mukadimah
+        mukadimah = hukum != '-' ? mukadimah + '\n \n*Hukum :*\n' + hukum : mukadimah
+        mukadimah = kisah != '-' ? mukadimah + '\n \n*Kisah :*\n' + kisah : mukadimah
+        mukadimah = lain != '-' ? mukadimah + '\n \n*Lainnya :*\n' + lain : mukadimah
 
         Step = 3; // Fix pesan
-        var jawab = `QS. ${info['namasurah']} adalah surat ke ${info['idsurah']} dari 114 surat di Al-Quran.\n \n` + mukadimah;
+        var jawab = `*QS. ${info['namasurah']}* adalah surat ke *${info['idsurah']}* dari 114 surat di Al-Quran.\n \n` + mukadimah;
         jawab = jawab + '\n \n' + dataStatic.dibuatOleh
 
         return jawab;
@@ -72,7 +73,7 @@ function ayatAcak(){
         Step = 1; // Ambil entity surah    
         var arrSurah = Object.keys(alquran),
         
-        Step = 2; // Angka random index surah, minimal 0 maksimal 113
+        Step = 2; // Angka random *index* surah, minimal 0 maksimal 113
         randIndex = Math.floor(Math.random() * arrSurah.length), 
         
         Step = 3; // Ambil entity, nama, arti surah secara acak menggunakan random index
@@ -80,7 +81,7 @@ function ayatAcak(){
         nmSurah = alquran[randSurah].nama,
         artiSurah = alquran[randSurah].arti,
         
-        Step = 4; // Angka random index ayat, berdasarkan jumlah ayat dari surah yang dipilih
+        Step = 4; // Angka random *index* ayat, berdasarkan jumlah ayat dari surah yang dipilih
         randAyat = Math.floor(Math.random() * alquran[randSurah].ayat.length),
 
         Step = 5; // Ambil nomor surat, nomor ayat, arab, terjemahan, juz, halaman
@@ -93,7 +94,7 @@ function ayatAcak(){
         hal = ayatSurahAcak.page_num,
 
         Step = 6; // Fix pesan
-        hasil = `${noSurah}. ${nmSurah} (${artiSurah}) ayat ${noAyat} juz ${juz} hal ${hal}\n \n${arab}\n \n${terjemah}\n \n${dataStatic.dibuatOleh}`
+        hasil = `*${noSurah}. ${nmSurah}* (${artiSurah}) ayat *${noAyat}* juz ${juz} hal ${hal}\n \n${arab}\n \n${terjemah}\n \n${dataStatic.dibuatOleh}`
 
         Step = 7; // Jadikan object agar bisa bawa action (isi menu)
         var obj = {
@@ -149,7 +150,7 @@ function cariTeks(cariKata){
 
             Step = 8; // Antisipasi jumlah ayat kurang dari 30            
             if(arrIsi.length <= index+29){
-                hasil = hasil + `Akhir dari hasil pencarian teks ${cari}\n`
+                hasil = hasil + `Akhir dari hasil pencarian teks *${cari}*\n`
             }
             hasil = hasil + `Page ${lastPage} dari ${lastPage}`
         }        
@@ -159,14 +160,14 @@ function cariTeks(cariKata){
 
             Step = 9; // Antisipasi jumlah ayat kurang dari 30 
             if(arrIsi.length <= index+29){
-                hasil = hasil + `Akhir dari hasil pencarian teks ${cari}\n`
+                hasil = hasil + `Akhir dari hasil pencarian teks *${cari}*\n`
             }
             hasil = hasil + `Page ${page} dari ${lastPage}`
         } 
 
         Step = 10; // Fix pesan
-        var pesan = `Teks ${cari} di Al-Quran berjumlah ${jml}, diantaranya:\n\n`
-        hasil = jml > 0 ? pesan + hasil + `\n \n${dataStatic.dibuatOleh}`: `Teks ${cari} tidak ditemukan. Ketik bantuan untuk melihat panduan QuraniBot.\n \n${dataStatic.dibuatOleh}`
+        var pesan = `Teks *${cari}* di Al-Quran berjumlah *${jml}*, diantaranya:\n\n`
+        hasil = jml > 0 ? pesan + hasil + `\n \n${dataStatic.dibuatOleh}`: `Teks *${cari}* tidak ditemukan. Ketik *bantuan* untuk melihat panduan QuraniBot.\n \n${dataStatic.dibuatOleh}`
         
         Step = 11; // Jadikan object agar bisa bawa action (isi menu)
         var obj = {
@@ -196,7 +197,7 @@ function nomorSurahAyatTertentu(noSurah, noAyat){
         juz = arrAyat.juz,
         hal = arrAyat.page_num,
         // info: noSurah dan noAyat ditambah 1 karena noSurah dan noAyat berisi index, berarti mulai dari 0
-        jawab = `${Number(noSurah)+1}. ${nmSurah} (${artiNm}) ayat ${Number(noAyat)+1} juz ${juz} hal ${hal}\n \n${arab}\n \n${terjemah}\n \n${dataStatic.dibuatOleh}`
+        jawab = `*${Number(noSurah)+1}. ${nmSurah}* (${artiNm}) ayat *${Number(noAyat)+1}* juz ${juz} hal ${hal}\n \n${arab}\n \n${terjemah}\n \n${dataStatic.dibuatOleh}`
 
         return jawab
 
@@ -217,7 +218,7 @@ function nomorSurahTafsirAyatTertentu(tafsir, noSurah, noAyat){
         artiNm = jsonQuran.arti,
         isiTafsir = dataTafsir[nmTafsir][entitySurah].tafsir[noAyat].tafsir_text,
         // info: noSurah dan noAyat ditambah 1 karena noSurah dan noAyat berisi index, berarti mulai dari 0
-        jawab = `${Number(noSurah)+1}. ${nmSurah} (${artiNm}) ayat ${Number(noAyat)+1}\n \n${isiTafsir}\n \n${dataStatic.dibuatOleh}`
+        jawab = `*${Number(noSurah)+1}. ${nmSurah}* (${artiNm}) ayat ${Number(noAyat)+1}\n \n${isiTafsir}\n \n${dataStatic.dibuatOleh}`
 
         return jawab
 
@@ -241,13 +242,13 @@ function nomorSurahInfoSurah(noSurah) {
         lain = info['lain']
 
         Step = 2; // Jika data bukan tidak ada (-), maka ditambahkan ke pesan
-        mukadimah = keimanan != '-' ? mukadimah + '\n \nKeimanan :\n' + keimanan : mukadimah
-        mukadimah = hukum != '-' ? mukadimah + '\n \nHukum :\n' + hukum : mukadimah
-        mukadimah = kisah != '-' ? mukadimah + '\n \nKisah :\n' + kisah : mukadimah
-        mukadimah = lain != '-' ? mukadimah + '\n \nLainnya :\n' + lain : mukadimah
+        mukadimah = keimanan != '-' ? mukadimah + '\n \n*Keimanan :*\n' + keimanan : mukadimah
+        mukadimah = hukum != '-' ? mukadimah + '\n \n*Hukum :*\n' + hukum : mukadimah
+        mukadimah = kisah != '-' ? mukadimah + '\n \n*Kisah :*\n' + kisah : mukadimah
+        mukadimah = lain != '-' ? mukadimah + '\n \n*Lainnya :*\n' + lain : mukadimah
 
         Step = 3; // Fix pesan
-        var jawab = `QS. ${info['namasurah']} adalah surat ke ${info['idsurah']} dari 114 surat di Al-Quran.\n \n` + mukadimah
+        var jawab = `*QS. ${info['namasurah']}* adalah surat ke *${info['idsurah']}* dari 114 surat di Al-Quran.\n \n` + mukadimah
         jawab = jawab + '\n \n' + dataStatic.dibuatOleh
 
         return jawab;
@@ -279,6 +280,14 @@ function shareAyat(entitySurah){
                 "answer":`${noSurah}/${noAyat}`,
                 "share":true,
                 "pesan":`share ${noSurah}:${noAyat}`,
+                // "actions":[
+                //     {"action":`Tafsir Kemenag ${nomorSurah}:${nomorAyat}`},
+                //     {"action":`Tafsir Muyassar ${nomorSurah}:${nomorAyat}`},
+                //     {"action":`Tafsir Jalalain ${nomorSurah}:${nomorAyat}`},
+                //     {"action":`Tafsir Ringkas ${nomorSurah}:${nomorAyat}`},
+                //     {"action":`Surat ${nomorSurah}:${nomorAyat}`},
+                //     {"action":`Bantuan`}
+                // ]
             }
 
             return obj

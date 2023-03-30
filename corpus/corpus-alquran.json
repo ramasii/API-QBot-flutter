@@ -6,7 +6,7 @@
       "intent":"qurani.ayat",
       "utterances":["@surah:@ayat", "al @surah @info @ayat", "@surah @ayat", "@info @surah @info @ayat"],
       "tests":["alfatihah:1"],
-      "answers":["{{_data[entities.surah.option].ayat[entities.ayat.option].nomorsurah}}. {{_data[entities.surah.option].nama}} ({{_data[entities.surah.option].arti}}) ayat {{ _data[entities.surah.option].ayat[entities.ayat.option].nomorayat }} juz {{ _data[entities.surah.option].ayat[entities.ayat.option].juz }} hal {{ _data[entities.surah.option].ayat[entities.ayat.option].page_num }}\n \n{{ _data[entities.surah.option].ayat[entities.ayat.option].indopak }}\n \n{{ _data[entities.surah.option].ayat[entities.ayat.option].indonesia }}\n \n{{_data.dibuatOleh}}"],
+      "answers":["**{{_data[entities.surah.option].ayat[entities.ayat.option].nomorsurah}}. {{_data[entities.surah.option].nama}}** ({{_data[entities.surah.option].arti}}) ayat **{{ _data[entities.surah.option].ayat[entities.ayat.option].nomorayat }}** juz {{ _data[entities.surah.option].ayat[entities.ayat.option].juz }} hal {{ _data[entities.surah.option].ayat[entities.ayat.option].page_num }}\n \n{{ _data[entities.surah.option].ayat[entities.ayat.option].indopak }}\n \n{{ _data[entities.surah.option].ayat[entities.ayat.option].indonesia }}\n \n{{_data.dibuatOleh}}"],
       "actions": ["Tafsir Kemenag @surah:@ayat","Tafsir Muyassar @surah:@ayat","Tafsir Jalalayn @surah:@ayat","Tafsir Ringkas @surah:@ayat", "Share @surah:@ayat"]
   },
   {
@@ -21,7 +21,7 @@
   },
   {
     "intent":"qurani.ayatAcak",
-    "utterances":["acak","random","tes", "garputala","garpu tala"],
+    "utterances":["acak","random","tes","test","coba","garputala","garpu tala"],
     "tests":["acak ayat", "ayat acak"],
     "answers":["jawaban di console.log"],
     "actions": ["Tafsir Kemenag @surah:@ayat","Tafsir Muyassar @surah:@ayat","Tafsir Jalalayn@surah:@ayat","Tafsir Ringkas @surah:@ayat","Share @surah:@ayat","Bantuan"]
