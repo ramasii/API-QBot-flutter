@@ -94,7 +94,7 @@ function ayatAcak(){
         hal = ayatSurahAcak.page_num,
 
         Step = 6; // Fix pesan
-        hasil = `*${noSurah}. ${nmSurah}* (${artiSurah}) ayat *${noAyat}* juz ${juz} hal ${hal}\n \n${arab}\n \n${terjemah}\n \n${dataStatic.dibuatOleh}`
+        hasil = `*${noSurah}. ${nmSurah}* (${artiSurah}) ayat *${noAyat}* juz ${juz} halaman ${hal}\n \n${arab}\n \n${terjemah}\n \n${dataStatic.dibuatOleh}`
 
         Step = 7; // Jadikan object agar bisa bawa action (isi menu)
         var obj = {
@@ -122,7 +122,7 @@ function cariTeks(cariKata){
         Step = 1; // Ambil entity surah dan deklarasi variabel
         var arrSurah = Object.keys(alquran), 
         jml = 0, urut = 1, hasil = '', arrIsi = [], isi = '', actions = [],
-        cari = cariKata.split('#')[0].toLowerCase(), page = cariKata.split('#')[1] || 1
+        cari = cariKata.split(':')[0].toLowerCase(), page = cariKata.split(':')[1] || 1
         
         Step = 2; // Cek setiap surah
         arrSurah.forEach(surah =>{                 
@@ -131,7 +131,7 @@ function cariTeks(cariKata){
                 Step = 4; // Cek setiap ayat yang terkandung kata pencarian
                 if(alquran[surah].ayat[i].indonesia.match(RegExp(cari, 'gi'))){
                     Step = 5; // Fix pesan
-                    isi = `${urut}. ${alquran[surah].nama} ${alquran[surah].ayat[i].nomorsurah}:${alquran[surah].ayat[i].nomorayat} hal ${alquran[surah].ayat[i].page_num}\n`;
+                    isi = `${urut}. ${alquran[surah].nama} ${alquran[surah].ayat[i].nomorsurah}:${alquran[surah].ayat[i].nomorayat} halaman ${alquran[surah].ayat[i].page_num}\n`;
                     jml++; urut++;
                     arrIsi.push(" " + isi);
                     actions.push({"action":`${alquran[surah].nama} ayat ${alquran[surah].ayat[i].nomorayat}`})                     
@@ -166,7 +166,7 @@ function cariTeks(cariKata){
         } 
 
         Step = 10; // Fix pesan
-        var pesan = `Teks *${cari}* di Al-Quran berjumlah *${jml}*, diantaranya:\n\n`
+        var pesan = `Teks *${cari}* di Al-Quran berjumlah *${jml}*, diantaranya:\n \n`
         hasil = jml > 0 ? pesan + hasil + `\n \n${dataStatic.dibuatOleh}`: `Teks *${cari}* tidak ditemukan. Ketik *bantuan* untuk melihat panduan QuraniBot.\n \n${dataStatic.dibuatOleh}`
         
         Step = 11; // Jadikan object agar bisa bawa action (isi menu)
@@ -197,7 +197,7 @@ function nomorSurahAyatTertentu(noSurah, noAyat){
         juz = arrAyat.juz,
         hal = arrAyat.page_num,
         // info: noSurah dan noAyat ditambah 1 karena noSurah dan noAyat berisi index, berarti mulai dari 0
-        jawab = `*${Number(noSurah)+1}. ${nmSurah}* (${artiNm}) ayat *${Number(noAyat)+1}* juz ${juz} hal ${hal}\n \n${arab}\n \n${terjemah}\n \n${dataStatic.dibuatOleh}`
+        jawab = `*${Number(noSurah)+1}. ${nmSurah}* (${artiNm}) ayat *${Number(noAyat)+1}* juz ${juz} halaman ${hal}\n \n${arab}\n \n${terjemah}\n \n${dataStatic.dibuatOleh}`
 
         return jawab
 

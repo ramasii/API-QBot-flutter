@@ -15,7 +15,11 @@ async function ProsesNlp(inputUser){
         if(input != undefined){
             Step = 2; // Proses nlp 
             const resN = await nlp.process(input.toLowerCase().replace(/(?<![a-z])\s+(?=\W|\d)/gi, '').replace(/(\s+|)-(\s+|)(?!\d)/gi, '').replace(/(\s+|)('|-)(\s+(?!aya(t|h|y))|)(?!\d)/gi, ''));
-            
+            console.log('------------------------------------------------');
+            console.log('');
+            console.log(resN);
+            console.log('');
+            console.log('------------------------------------------------');
             if(resN.intent == 'qurani.ayat'){
                 Step = 3; // Ayat tertentu
                 var noSurah = getNomorSurah(resN),
@@ -241,7 +245,15 @@ async function ProsesNlp(inputUser){
                 })
                 isi = nomorSurahInfoSurah(nomorSurah)
                 
-                return isi
+                return {"answer":isi,"actions":[{
+                    "action": "Acak Ayat"
+                  },
+                  {
+                    "action": "Share Acak"
+                  },
+                  {
+                    "action": "Bantuan"
+                  }]}
             }              
             else if(resN.intent == 'qurani.ayatAcak'){
                 Step = 20; // Ayat acak
