@@ -11,7 +11,7 @@ function ayatSekianSampaiSekian(entitySurah, dariIndex, sampaiIndex){
         var noSurah = alquran[entitySurah].ayat[0].nomorsurah,
         artiNm = alquran[entitySurah].arti,
         nmSurah = alquran[entitySurah].nama,
-        pesan = `*${noSurah}. ${nmSurah}* (${artiNm}) ayat *${alquran[entitySurah].ayat[dariIndex-1].nomorayat}-${alquran[entitySurah].ayat[sampaiIndex-1].nomorayat}*`,        
+        pesan = `*${nmSurah}* (${artiNm}) surat ke *${noSurah}* ayat *${alquran[entitySurah].ayat[dariIndex-1].nomorayat}-${alquran[entitySurah].ayat[sampaiIndex-1].nomorayat}*`,        
         rangeAyat = alquran[entitySurah].ayat.slice(dariIndex-1, sampaiIndex),
         isi = '', actions = [];
 
@@ -94,7 +94,7 @@ function ayatAcak(){
         hal = ayatSurahAcak.page_num,
 
         Step = 6; // Fix pesan
-        hasil = `*${noSurah}. ${nmSurah}* (${artiSurah}) ayat *${noAyat}* juz ${juz} halaman ${hal}\n \n${arab}\n \n${terjemah}\n \n${dataStatic.dibuatOleh}`
+        hasil = `*${nmSurah}* (${artiSurah}) surat ke *${noSurah}* ayat *${noAyat}* juz ${juz} halaman ${hal}\n \n${arab}\n \n${terjemah}\n \n${dataStatic.dibuatOleh}`
 
         Step = 7; // Jadikan object agar bisa bawa action (isi menu)
         var obj = {
@@ -197,7 +197,7 @@ function nomorSurahAyatTertentu(noSurah, noAyat){
         juz = arrAyat.juz,
         hal = arrAyat.page_num,
         // info: noSurah dan noAyat ditambah 1 karena noSurah dan noAyat berisi index, berarti mulai dari 0
-        jawab = `*${Number(noSurah)+1}. ${nmSurah}* (${artiNm}) ayat *${Number(noAyat)+1}* juz ${juz} halaman ${hal}\n \n${arab}\n \n${terjemah}\n \n${dataStatic.dibuatOleh}`
+        jawab = `*${nmSurah}* (${artiNm}) surat ke *${Number(noSurah)+1}* ayat *${Number(noAyat)+1}* juz ${juz} halaman ${hal}\n \n${arab}\n \n${terjemah}\n \n${dataStatic.dibuatOleh}`
 
         return jawab
 
@@ -218,7 +218,7 @@ function nomorSurahTafsirAyatTertentu(tafsir, noSurah, noAyat){
         artiNm = jsonQuran.arti,
         isiTafsir = dataTafsir[nmTafsir][entitySurah].tafsir[noAyat].tafsir_text,
         // info: noSurah dan noAyat ditambah 1 karena noSurah dan noAyat berisi index, berarti mulai dari 0
-        jawab = `*${Number(noSurah)+1}. ${nmSurah}* (${artiNm}) ayat ${Number(noAyat)+1}\n \n${isiTafsir}\n \n${dataStatic.dibuatOleh}`
+        jawab = `*${nmSurah}* (${artiNm}) surat ke *${Number(noSurah)+1}* ayat ${Number(noAyat)+1}\n \n${isiTafsir}\n \n${dataStatic.dibuatOleh}`
 
         return jawab
 

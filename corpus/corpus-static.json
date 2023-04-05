@@ -12,7 +12,7 @@
                 "ola","ciao","oi","ahlan","ahlan wa sahlan","shukran"
             ],
             "tests":["hi","halo halo","Perkenalan bang","hai","halo","pagi","siang","sore","malam"],
-            "answers":["Assalamualaikum... **QuraniBot** siap menjawab sejumlah pertanyaan terkait Al-Quran. Silahkan ketik pertanyaan sesuai format yang ada. Ketik bantuan jika perlu bantuan atau ada kesulitan.\n \n{{_data.dibuatOleh}}"],
+            "answers":["Assalamualaikum... **{{_data.namaApp}}** siap menjawab sejumlah pertanyaan terkait Islam mulai Al-Quran, Hadits, Fiqih, Sirah, berbagai keputusan ulama dan sebagainya.\nSilahkan ketik pertanyaan sesuai format yang disediakan. Ketik bantuan jika perlu panduan cara menggunakan {{_data.namaApp}}.\n \n{{_data.dibuatOleh}}"],
             "actions":["Acak Ayat","Share Acak","Bantuan"]
         },
         {
@@ -28,13 +28,13 @@
                 "syalom", "loyams", "salyom", "myloas", "yamlos", "osylam", "mysola", "laymos", "losamy", "slamyo", "somlay"  
             ],
             "tests":["Salam","Assalamualaikum","Assalaamualaikum","Assalamu'alaikum","Assalaamu'alaikum"],
-            "answers":["Waalaikumsalaam... **QuraniBot** siap menjawab sejumlah pertanyaan terkait Al-Quran. Silahkan ketik pertanyaan sesuai format yang ada. Ketik bantuan jika perlu bantuan atau ada kesulitan.\n \n{{_data.dibuatOleh}}"],
+            "answers":["Waalaikumsalaam... **{{_data.namaApp}}** siap menjawab sejumlah pertanyaan terkait Islam mulai Al-Quran, Hadits, Fiqih, Sirah, berbagai keputusan ulama dan sebagainya.\nSilahkan ketik pertanyaan sesuai format yang disediakan. Ketik bantuan jika perlu panduan cara menggunakan {{_data.namaApp}}.\n \n{{_data.dibuatOleh}}"],
             "actions":["Acak Ayat","Share Acak","Bantuan"]
         },
         {
             "intent":"qurani.terimaKasih",
             "utterances":["@terimakasih"],
-            "answers":["Terima kasih telah menggunakan **QuraniBot**. Semoga menjadi kebaikan dan manfaat untuk dunia dan akhirat kita semua. Aamiin.\n \n{{_data.dibuatOleh}}"],
+            "answers":["Terima kasih telah menggunakan **{{_data.namaApp}}**. Semoga menjadi kebaikan dan manfaat untuk dunia dan akhirat kita semua. Aamiin.\n \n{{_data.dibuatOleh}}"],
             "actions":["Acak Ayat","Share Acak","Bantuan"]
         },
         {
@@ -46,7 +46,7 @@
                 "info", "infokan", "informasi", "penjelasan", "keterangan", "data", "berita", "fakta", "edukasi", "pemberitahuan", "pemberitahuan penting", "beritahu", "kabar", "kabar terbaru", "informasikan", "laporan", "laporan terbaru", "lengkapin", "sampaikan informasi", "berikan informasi", "tahu info", "minta info", "kadulu", "tolonga", "ammali", "njaluk tulung", "putus asa", "menyerah", "give up", "ga kuat","ora sanggup"
             ],
             "tests":["Bantuan","Panduan","mau Tutorial"],
-            "answers":["**QuraniBot** adalah chatbot berbasis Artificial Intelligence (AI) yang membantu menjawab berbagai pertanyaan terkait Al-Quran\n \nSilahkan kirim chat ke nomor ini dengan format sebagai berikut\n \n1. Ayat tertentu. Sebutkan nama/nomor surat dan nomor ayat\n     Contoh: **Al-Baqarah:183**\n     Contoh: **Al-Baqarah ayat 183**\n     Contoh: **2:183**\n     Contoh: **2 ayat 183**\n \n2. Ayat sekian sampai sekian. Sebutkan nama/nomor surat dan nomor ayat awal sampai akhir\n     Contoh: **Al-Baqarah:183-185**\n     Contoh: **Al-Baqarah ayat 183-185**\n     Contoh: **Al-Baqarah ayat 183 sampai 185**\n     Contoh: **2:183-185**\n     Contoh: **2 ayat 183-185**\n     Contoh: **2:183 sampai 185**\n     Contoh: **2 ayat 183 sampai 185**\n \n3. Tafsir ayat tertentu\n     Contoh: **Tafsir 2:183**\n     Contoh: **Tafsir Al-Baqarah:183**\n     Contoh: **Tafsir Al-Baqarah ayat 183**\n \n4. Informasi surat. Sebutkan nama/nomor surat\n     Contoh: **Al-Baqarah surat ke berapa?**\n     Contoh: **Surat ke 2 surat apa?**\n     Contoh: **Al-Baqarah**\n     Contoh: **Tentang Al-Baqarah**\n     Contoh: **Tentang surat Al-Baqarah**\n \n5. Ayat secara acak\n     Contoh: **Acak**\n \n6. Share (bagikan) ayat secara acak atau ayat tertentu\n     Contoh: **Share acak**\n     Contoh: **Share Al-Baqarah:183**\n     Contoh: **Share Al-Baqarah ayat 183**\n     Contoh: **Share 2:183**\n     Contoh: **Share 2 ayat 183**\n \n7. Cari teks di terjemah atau teks Arab\n     Contoh: **Cari surga**\n     Contoh: **Cari surga:2**\n \n8. Set terjemahan: Indonesia, Melayu\n     Contoh: **Set terjemahan melayu**\n \n9. Set tafsir: Jalalayn, Kemenag, Muyassar, Ringkas\n     Contoh: **Set tafsir kemenag**\n \n10. Lainnya: Ayat terpendek, ayat terpanjang, surat terpendek, surat terpanjang, surat makiyah, surat madaniyah, surat makiyah dan madaniyah\n\n{{_data.dibuatOleh}}"],
+            "answers":["**{{_data.namaApp}}** adalah chatbot berbasis Artificial Intelligence (AI) yang membantu menjawab berbagai pertanyaan terkait Al-Quran\n \nSilahkan kirim chat ke nomor ini dengan format sebagai berikut\n \n1. Ayat tertentu. Sebutkan nama/nomor surat dan nomor ayat\n     Contoh: **Al-Baqarah:183**\n     Contoh: **Al-Baqarah ayat 183**\n     Contoh: **2:183**\n     Contoh: **2 ayat 183**\n \n2. Ayat sekian sampai sekian. Sebutkan nama/nomor surat dan nomor ayat awal sampai akhir\n     Contoh: **Al-Baqarah:183-185**\n     Contoh: **Al-Baqarah ayat 183-185**\n     Contoh: **Al-Baqarah ayat 183 sampai 185**\n     Contoh: **2:183-185**\n     Contoh: **2 ayat 183-185**\n     Contoh: **2:183 sampai 185**\n     Contoh: **2 ayat 183 sampai 185**\n \n3. Tafsir ayat tertentu\n     Contoh: **Tafsir 2:183**\n     Contoh: **Tafsir Al-Baqarah:183**\n     Contoh: **Tafsir Al-Baqarah ayat 183**\n \n4. Informasi surat. Sebutkan nama/nomor surat\n     Contoh: **Al-Baqarah surat ke berapa?**\n     Contoh: **Surat ke 2 surat apa?**\n     Contoh: **Al-Baqarah**\n     Contoh: **Tentang Al-Baqarah**\n     Contoh: **Tentang surat Al-Baqarah**\n \n5. Ayat secara acak\n     Contoh: **Acak**\n \n6. Share (bagikan) ayat secara acak atau ayat tertentu\n     Contoh: **Share acak**\n     Contoh: **Share Al-Baqarah:183**\n     Contoh: **Share Al-Baqarah ayat 183**\n     Contoh: **Share 2:183**\n     Contoh: **Share 2 ayat 183**\n \n7. Cari teks di terjemah atau teks Arab\n     Contoh: **Cari surga**\n     Contoh: **Cari surga:2**\n \n8. Set terjemahan: Indonesia, Melayu\n     Contoh: **Set terjemahan melayu**\n \n9. Set tafsir: Jalalayn, Kemenag, Muyassar, Ringkas\n     Contoh: **Set tafsir kemenag**\n \n10. Lainnya: Ayat terpendek, ayat terpanjang, surat terpendek, surat terpanjang, surat makiyah, surat madaniyah, surat makiyah dan madaniyah\n\n{{_data.dibuatOleh}}"],
             "actions":[
                 "Al-Baqarah:183",
                 "Al-Baqarah ayat 183",
@@ -138,7 +138,7 @@
         {
             "intent":"None",
             "utterances":[],
-            "answers":["Maaf, *QuraniBot* tidak memahami permintaan Anda. Ketik *bantuan* untuk melihat panduan QuraniBot.\n \n*QuraniBot* dibuat oleh *Pesantren Teknologi Modern Assalaam*"],
+            "answers":["Maaf, *{{_data.namaApp}}* tidak memahami permintaan Anda. Ketik *bantuan* untuk melihat panduan {{_data.namaApp}}.\n \n*{{_data.namaApp}}* dibuat oleh *Pesantren Teknologi Modern Assalaam*"],
             "actions":["Acak Ayat","Share Acak","Bantuan"]
         }
     ],
