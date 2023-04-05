@@ -2,15 +2,15 @@ const express = require('express');
 const {ProsesNlp} = require('./nlp.js')
 const app = express();
 const port = 5111;
-const point = '/api/v1/bots/qbotflutter'
+const point = '/api/v1/bots/islambot'
 
 /*
     cek di sini
-    http://localhost:5111/api/v1/bots/qbotflutter/input?input=hai 
+    http://localhost:5111/api/v1/bots/islambot/input?input=hai 
 */
 
 app.get('/', (req, res) => {
-  res.send('<h1>API is online</h1><br><p>http://localhost:5111/api/v1/bots/qbotflutter/input?input=hai</p>');
+  res.send('<h1>API is online</h1><br><p>http://localhost:5111/api/v1/bots/islambot/input?input=hai</p>');
 });
 
 app.get(point, (req, res) => {
