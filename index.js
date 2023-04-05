@@ -10,12 +10,8 @@ const point = '/api/v1/bots/islambot'
     http://localhost:5111/api/v1/bots/islambot/input?input=hai 
 */
 
-app.get('/', (req, res) => {
-  res.send('<h1>API is online</h1><br><p>http://localhost:5111/api/v1/bots/islambot/input?input=hai</p>');
-});
-
 app.get(point, (req, res) => {
-  res.send('<h1>API <u>QBot</u> is online</h1><br><p>untuk <strong>Flutter</strong></p>');
+  res.send('<h1>API <u>IslamBot</u> is online</h1><br><p>untuk <strong>Flutter</strong></p>');
 });
 
 app.get(`${point}/input`, async (req, res) => {
