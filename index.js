@@ -1,4 +1,5 @@
 const express = require('express');
+const {checkKey} = require('./apikeycheck')
 const {ProsesNlp} = require('./nlp.js')
 const app = express();
 const port = 5111;
@@ -18,9 +19,14 @@ app.get(point, (req, res) => {
 });
 
 app.get(`${point}/input`, async (req, res) => {
-    const {input} = req.query
-    var jawab = await ProsesNlp(input)
-    res.send(jawab)
+    const {input, client, apikey} = req.query
+
+    //cek apikey
+    if(checkKey(client, apikey)){
+      var jawab = await ProsesNlp(input)
+      res.send(jawab)
+    }
+    else res.send('<h1>invalid client or API key</h1>')
 });
 
 app.listen(port, () => {
