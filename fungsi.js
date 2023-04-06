@@ -22,7 +22,7 @@ function ayatSekianSampaiSekian(entitySurah, dariIndex, sampaiIndex){
         });
 
         Step = 3; // Fix pesan
-        isi = pesan + isi + '\n \n' + dataStatic.dibuatOleh;
+        isi = pesan + isi;
         actions.push({"action":`Bantuan`})
         
         Step = 4; // Jadikan object agar bisa bawa action (isi menu)
@@ -58,7 +58,6 @@ function informasiSurat(entitySurah1, entitySurah2){
 
         Step = 3; // Fix pesan
         var jawab = `*QS. ${info['namasurah']}* adalah surat ke *${info['idsurah']}* dari 114 surat di Al-Quran.\n \n` + mukadimah;
-        jawab = jawab + '\n \n' + dataStatic.dibuatOleh
 
         return jawab;
 
@@ -94,7 +93,7 @@ function ayatAcak(){
         hal = ayatSurahAcak.page_num,
 
         Step = 6; // Fix pesan
-        hasil = `*${nmSurah}* (${artiSurah}) surat ke *${noSurah}* ayat *${noAyat}* juz ${juz} halaman ${hal}\n \n${arab}\n \n${terjemah}\n \n${dataStatic.dibuatOleh}`
+        hasil = `*${nmSurah}* (${artiSurah}) surat ke *${noSurah}* ayat *${noAyat}* juz ${juz} halaman ${hal}\n \n${arab}\n \n${terjemah}`
 
         Step = 7; // Jadikan object agar bisa bawa action (isi menu)
         var obj = {
@@ -167,7 +166,7 @@ function cariTeks(cariKata){
 
         Step = 10; // Fix pesan
         var pesan = `Teks *${cari}* di Al-Quran berjumlah *${jml}*, diantaranya:\n \n`
-        hasil = jml > 0 ? pesan + hasil + `\n \n${dataStatic.dibuatOleh}`: `Teks *${cari}* tidak ditemukan. Ketik *bantuan* untuk melihat panduan QuraniBot.\n \n${dataStatic.dibuatOleh}`
+        hasil = jml > 0 ? pesan + hasil : `Teks *${cari}* tidak ditemukan. Ketik *bantuan* untuk melihat panduan IslamBot.`
         
         Step = 11; // Jadikan object agar bisa bawa action (isi menu)
         var obj = {
@@ -197,7 +196,7 @@ function nomorSurahAyatTertentu(noSurah, noAyat){
         juz = arrAyat.juz,
         hal = arrAyat.page_num,
         // info: noSurah dan noAyat ditambah 1 karena noSurah dan noAyat berisi index, berarti mulai dari 0
-        jawab = `*${nmSurah}* (${artiNm}) surat ke *${Number(noSurah)+1}* ayat *${Number(noAyat)+1}* juz ${juz} halaman ${hal}\n \n${arab}\n \n${terjemah}\n \n${dataStatic.dibuatOleh}`
+        jawab = `*${nmSurah}* (${artiNm}) surat ke *${Number(noSurah)+1}* ayat *${Number(noAyat)+1}* juz ${juz} halaman ${hal}\n \n${arab}\n \n${terjemah}`
 
         return jawab
 
@@ -218,7 +217,7 @@ function nomorSurahTafsirAyatTertentu(tafsir, noSurah, noAyat){
         artiNm = jsonQuran.arti,
         isiTafsir = dataTafsir[nmTafsir][entitySurah].tafsir[noAyat].tafsir_text,
         // info: noSurah dan noAyat ditambah 1 karena noSurah dan noAyat berisi index, berarti mulai dari 0
-        jawab = `*${nmSurah}* (${artiNm}) surat ke *${Number(noSurah)+1}* ayat ${Number(noAyat)+1}\n \n${isiTafsir}\n \n${dataStatic.dibuatOleh}`
+        jawab = `*${nmSurah}* (${artiNm}) surat ke *${Number(noSurah)+1}* ayat ${Number(noAyat)+1}\n \n${isiTafsir}`
 
         return jawab
 
@@ -249,7 +248,6 @@ function nomorSurahInfoSurah(noSurah) {
 
         Step = 3; // Fix pesan
         var jawab = `*QS. ${info['namasurah']}* adalah surat ke *${info['idsurah']}* dari 114 surat di Al-Quran.\n \n` + mukadimah
-        jawab = jawab + '\n \n' + dataStatic.dibuatOleh
 
         return jawab;
         

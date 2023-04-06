@@ -6,7 +6,7 @@
       "intent":"qurani.ayat",
       "utterances":["@surah:@ayat", "al @surah @info @ayat", "@surah @ayat", "@info @surah @info @ayat"],
       "tests":["alfatihah:1"],
-      "answers":["**{{_data[entities.surah.option].nama}}** ({{_data[entities.surah.option].arti}}) surat ke **{{_data[entities.surah.option].ayat[entities.ayat.option].nomorsurah}}** ayat **{{ _data[entities.surah.option].ayat[entities.ayat.option].nomorayat }}** juz {{ _data[entities.surah.option].ayat[entities.ayat.option].juz }} halaman {{ _data[entities.surah.option].ayat[entities.ayat.option].page_num }}\n \n{{ _data[entities.surah.option].ayat[entities.ayat.option].indopak }}\n \n{{ _data[entities.surah.option].ayat[entities.ayat.option].indonesia }}\n \n{{_data.dibuatOleh}}"],
+      "answers":["**{{_data[entities.surah.option].nama}}** ({{_data[entities.surah.option].arti}}) surat ke **{{_data[entities.surah.option].ayat[entities.ayat.option].nomorsurah}}** ayat **{{ _data[entities.surah.option].ayat[entities.ayat.option].nomorayat }}** juz {{ _data[entities.surah.option].ayat[entities.ayat.option].juz }} halaman {{ _data[entities.surah.option].ayat[entities.ayat.option].page_num }}\n \n{{ _data[entities.surah.option].ayat[entities.ayat.option].indopak }}\n \n{{ _data[entities.surah.option].ayat[entities.ayat.option].indonesia }}"],
       "actions": ["Tafsir Kemenag @surah:@ayat","Tafsir Muyassar @surah:@ayat","Tafsir Jalalayn @surah:@ayat","Tafsir Ringkas @surah:@ayat", "Share @surah:@ayat"]
   },
   {

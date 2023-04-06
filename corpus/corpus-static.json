@@ -12,7 +12,7 @@
                 "ola","ciao","oi","ahlan","ahlan wa sahlan","shukran"
             ],
             "tests":["hi","halo halo","Perkenalan bang","hai","halo","pagi","siang","sore","malam"],
-            "answers":["Assalamualaikum... **{{_data.namaApp}}** siap menjawab sejumlah pertanyaan terkait Islam mulai Al-Quran, Hadits, Fiqih, Sirah, berbagai keputusan ulama dan sebagainya.\nSilahkan ketik pertanyaan sesuai format yang disediakan. Ketik bantuan jika perlu panduan cara menggunakan {{_data.namaApp}}.\n \n{{_data.dibuatOleh}}"],
+            "answers":["Assalamualaikum... **{{_data.namaApp}}** siap menjawab sejumlah pertanyaan terkait Islam mulai Al-Quran, Hadits, Fiqih, Sirah, berbagai keputusan ulama dan sebagainya.\nSilahkan ketik pertanyaan sesuai format yang disediakan. Ketik bantuan jika perlu panduan cara menggunakan {{_data.namaApp}}."],
             "actions":["Acak Ayat","Share Acak","Bantuan"]
         },
         {
@@ -28,13 +28,13 @@
                 "syalom", "loyams", "salyom", "myloas", "yamlos", "osylam", "mysola", "laymos", "losamy", "slamyo", "somlay"  
             ],
             "tests":["Salam","Assalamualaikum","Assalaamualaikum","Assalamu'alaikum","Assalaamu'alaikum"],
-            "answers":["Waalaikumsalaam... **{{_data.namaApp}}** siap menjawab sejumlah pertanyaan terkait Islam mulai Al-Quran, Hadits, Fiqih, Sirah, berbagai keputusan ulama dan sebagainya.\nSilahkan ketik pertanyaan sesuai format yang disediakan. Ketik bantuan jika perlu panduan cara menggunakan {{_data.namaApp}}.\n \n{{_data.dibuatOleh}}"],
+            "answers":["Waalaikumsalaam... **{{_data.namaApp}}** siap menjawab sejumlah pertanyaan terkait Islam mulai Al-Quran, Hadits, Fiqih, Sirah, berbagai keputusan ulama dan sebagainya.\nSilahkan ketik pertanyaan sesuai format yang disediakan. Ketik bantuan jika perlu panduan cara menggunakan {{_data.namaApp}}."],
             "actions":["Acak Ayat","Share Acak","Bantuan"]
         },
         {
             "intent":"qurani.terimaKasih",
             "utterances":["@terimakasih"],
-            "answers":["Terima kasih telah menggunakan **{{_data.namaApp}}**. Semoga menjadi kebaikan dan manfaat untuk dunia dan akhirat kita semua. Aamiin.\n \n{{_data.dibuatOleh}}"],
+            "answers":["Terima kasih telah menggunakan **{{_data.namaApp}}**. Semoga menjadi kebaikan dan manfaat untuk dunia dan akhirat kita semua. Aamiin."],
             "actions":["Acak Ayat","Share Acak","Bantuan"]
         },
         {
@@ -97,13 +97,13 @@
         {
             "intent":"qurani.setTerjemahan",
             "utterances":["set terjemahan @bahasa"],
-            "answers":["Berhasil mengubah Terjemahan ke {{ _data.bahasa[entities.bahasa.option].nama}}\n \n{{_data.dibuatOleh}}"],
+            "answers":["Berhasil mengubah Terjemahan ke {{ _data.bahasa[entities.bahasa.option].nama}}"],
             "actions":["Acak Ayat","Share Acak","Bantuan"]
         },
         {
             "intent":"qurani.setTafsir",
             "utterances":["set tafsir @tafsir"],
-            "answers":["Berhasil mengubah Tafsir ke {{ _data.tafsir[entities.tafsir.option].nama}}\n \n{{_data.dibuatOleh}}"],
+            "answers":["Berhasil mengubah Tafsir ke {{ _data.tafsir[entities.tafsir.option].nama}}"],
             "actions":["Acak Ayat","Share Acak","Bantuan"]
         },
         {
@@ -138,7 +138,7 @@
         {
             "intent":"None",
             "utterances":[],
-            "answers":["Maaf, *{{_data.namaApp}}* tidak memahami permintaan Anda. Ketik *bantuan* untuk melihat panduan {{_data.namaApp}}.\n \n*{{_data.namaApp}}* dibuat oleh *Pesantren Teknologi Modern Assalaam*"],
+            "answers":["Maaf, *{{_data.namaApp}}* tidak memahami permintaan Anda. Ketik *bantuan* untuk melihat panduan {{_data.namaApp}}."],
             "actions":["Acak Ayat","Share Acak","Bantuan"]
         }
     ],
