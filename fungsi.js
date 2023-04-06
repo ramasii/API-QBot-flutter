@@ -278,14 +278,14 @@ function shareAyat(entitySurah){
                 "answer":`${noSurah}/${noAyat}`,
                 "share":true,
                 "pesan":`share ${noSurah}:${noAyat}`,
-                // "actions":[
-                //     {"action":`Tafsir Kemenag ${nomorSurah}:${nomorAyat}`},
-                //     {"action":`Tafsir Muyassar ${nomorSurah}:${nomorAyat}`},
-                //     {"action":`Tafsir Jalalain ${nomorSurah}:${nomorAyat}`},
-                //     {"action":`Tafsir Ringkas ${nomorSurah}:${nomorAyat}`},
-                //     {"action":`Surat ${nomorSurah}:${nomorAyat}`},
-                //     {"action":`Bantuan`}
-                // ]
+                "actions":[
+                    {"action":`Tafsir Kemenag ${nomorSurah}:${nomorAyat}`},
+                    {"action":`Tafsir Muyassar ${nomorSurah}:${nomorAyat}`},
+                    {"action":`Tafsir Jalalain ${nomorSurah}:${nomorAyat}`},
+                    {"action":`Tafsir Ringkas ${nomorSurah}:${nomorAyat}`},
+                    {"action":`${nomorSurah}:${nomorAyat}`},
+                    {"action":`Bantuan`}
+                ]
             }
 
             return obj
@@ -317,4 +317,13 @@ function getNomorSurah(resultNlp){
     }    
 }
 
-module.exports = {ayatSekianSampaiSekian, informasiSurat, ayatAcak, cariTeks, nomorSurahAyatTertentu, nomorSurahTafsirAyatTertentu, nomorSurahInfoSurah, shareAyat, getNomorSurah}
+// utils
+function selfLog(teks) {
+    console.log('------------------------------------------------');
+    console.log('');
+    console.log(teks);
+    console.log('');
+    console.log('------------------------------------------------');
+}
+
+module.exports = {selfLog,ayatSekianSampaiSekian, informasiSurat, ayatAcak, cariTeks, nomorSurahAyatTertentu, nomorSurahTafsirAyatTertentu, nomorSurahInfoSurah, shareAyat, getNomorSurah}
