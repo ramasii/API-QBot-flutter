@@ -9,7 +9,8 @@ app.use(express.static('public'));
 
 /*
     cek di sini
-    http://localhost:5111/api/v1/bots/islambot/input?input=hai 
+    http://localhost:5111/api/v1/bots/islambot/input?input=hai
+    http://localhost:5111/api/v1/bots/islambot/share?surat=1&ayat=1
 */
 
 app.get(point, (req, res) => {
@@ -17,8 +18,9 @@ app.get(point, (req, res) => {
 });
 
 // menampilkan share ayat
-app.get(`${point}/share`, (req, res) => {
-  const { surat, ayat } = req.query;
+app.get(`${point}/share/:surat/:ayat`, (req, res) => {
+  const surat = req.params.surat;
+  const ayat = req.params.ayat;
   surat == "" || ayat == "" 
   ? res.send({ "answer": "Mohon masukkan surat dan nomor ayat dengan tepat.", "actions":[{"action":"Ayat acak"},{"action":"Share acak"},{"action":"Bantuan"}] }) 
   : surat == undefined || ayat == undefined 

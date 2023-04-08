@@ -279,11 +279,11 @@ function shareAyat(entitySurah){
                 "share":true,
                 "pesan":`share ${noSurah}:${noAyat}`,
                 "actions":[
-                    {"action":`Tafsir Kemenag ${nomorSurah}:${nomorAyat}`},
-                    {"action":`Tafsir Muyassar ${nomorSurah}:${nomorAyat}`},
-                    {"action":`Tafsir Jalalain ${nomorSurah}:${nomorAyat}`},
-                    {"action":`Tafsir Ringkas ${nomorSurah}:${nomorAyat}`},
-                    {"action":`${nomorSurah}:${nomorAyat}`},
+                    {"action":`Tafsir Kemenag ${noSurah}:${noAyat}`},
+                    {"action":`Tafsir Muyassar ${noSurah}:${noAyat}`},
+                    {"action":`Tafsir Jalalain ${noSurah}:${noAyat}`},
+                    {"action":`Tafsir Ringkas ${noSurah}:${noAyat}`},
+                    {"action":`${noSurah}:${noAyat}`},
                     {"action":`Bantuan`}
                 ]
             }

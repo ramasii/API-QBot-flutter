@@ -281,7 +281,15 @@ async function ProsesNlp(inputUser){
                     obj = {
                         "answer":dir,
                         "share":true,
-                        "pesan":`share ${noSurah}:${noAyat}`
+                        "pesan":`share ${noSurah}:${noAyat}`,
+                        "actions":[
+                            {"action":`Tafsir Kemenag ${noSurah}:${noAyat}`},
+                            {"action":`Tafsir Muyassar ${noSurah}:${noAyat}`},
+                            {"action":`Tafsir Jalalain ${noSurah}:${noAyat}`},
+                            {"action":`Tafsir Ringkas ${noSurah}:${noAyat}`},
+                            {"action":`${noSurah}:${noAyat}`},
+                            {"action":`Bantuan`}
+                        ]
                     }
 
                     return obj
