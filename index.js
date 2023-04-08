@@ -21,11 +21,17 @@ app.get(point, (req, res) => {
 app.get(`${point}/share/:surat/:ayat`, (req, res) => {
   const surat = req.params.surat;
   const ayat = req.params.ayat;
-  surat == "" || ayat == "" 
-  ? res.send({ "answer": "Mohon masukkan surat dan nomor ayat dengan tepat.", "actions":[{"action":"Ayat acak"},{"action":"Share acak"},{"action":"Bantuan"}] }) 
-  : surat == undefined || ayat == undefined 
-  ? res.send({ "answer": "Mohon masukkan surat dan nomor ayat dengan tepat.", "actions":[{"action":"Ayat acak"},{"action":"Share acak"},{"action":"Bantuan"}] }) 
-  : res.sendFile(`D:/Projects/Javascript/API-QBot-flutter/gambar/surah/${surat}/${ayat}.jpg`);
+  const { client, apikey } = req.query
+
+  // cek apikey
+  if (checkKey(client, apikey)) {
+    surat == "" || ayat == "" 
+    ? res.send({ "answer": "Mohon masukkan surat dan nomor ayat dengan tepat.", "actions":[{"action":"Ayat acak"},{"action":"Share acak"},{"action":"Bantuan"}] }) 
+    : surat == undefined || ayat == undefined 
+    ? res.send({ "answer": "Mohon masukkan surat dan nomor ayat dengan tepat.", "actions":[{"action":"Ayat acak"},{"action":"Share acak"},{"action":"Bantuan"}] }) 
+    : res.sendFile(`D:/Projects/Javascript/API-QBot-flutter/gambar/surah/${surat}/${ayat}.jpg`);
+  }
+  else res.send('<h1>invalid client or API key</h1>')
 });
 
 // input pakai teks
