@@ -130,7 +130,7 @@ function cariTeks(cariKata){
                 Step = 4; // Cek setiap ayat yang terkandung kata pencarian
                 if(alquran[surah].ayat[i].indonesia.match(RegExp(cari, 'gi'))){
                     Step = 5; // Fix pesan
-                    isi = `${urut}. ${alquran[surah].nama} ${alquran[surah].ayat[i].nomorsurah}:${alquran[surah].ayat[i].nomorayat} halaman ${alquran[surah].ayat[i].page_num}\n`;
+                    isi = `${urut}. ${alquran[surah].nama} ayat ${alquran[surah].ayat[i].nomorayat} halaman ${alquran[surah].ayat[i].page_num}\n`;
                     jml++; urut++;
                     arrIsi.push(" " + isi);
                     actions.push({"action":`${alquran[surah].nama} ayat ${alquran[surah].ayat[i].nomorayat}`})                     
