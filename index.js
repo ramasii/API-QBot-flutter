@@ -29,7 +29,7 @@ app.get(`${point}/share/:surat/:ayat`, (req, res) => {
     ? res.send({ "answer": "Mohon masukkan surat dan nomor ayat dengan tepat.", "actions":[{"action":"Ayat acak"},{"action":"Share acak"},{"action":"Bantuan"}] }) 
     : surat == undefined || ayat == undefined 
     ? res.send({ "answer": "Mohon masukkan surat dan nomor ayat dengan tepat.", "actions":[{"action":"Ayat acak"},{"action":"Share acak"},{"action":"Bantuan"}] }) 
-    : res.sendFile(`D:/Projects/Javascript/API-QBot-flutter/gambar/surah/${surat}/${ayat}.jpg`);
+    : res.sendFile(`D:/GitNobox/NoboxDesktop/Assets/Quran/gambar/surah/${surat}/${ayat}.jpg`);
   }
   else res.send('<h1>invalid client or API key</h1>')
 });
