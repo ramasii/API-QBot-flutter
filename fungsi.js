@@ -151,7 +151,7 @@ function cariTeks(cariKata){
             if(arrIsi.length <= index+29){
                 hasil = hasil + `Akhir dari hasil pencarian teks *${cari}*\n`
             }
-            hasil = hasil + `Page ${lastPage} dari ${lastPage}`
+            hasil = hasil + `Halaman ${lastPage} dari ${lastPage}`
         }        
         else{
             hasil = arrIsi.slice(index-1, index+29).join('');
@@ -161,7 +161,7 @@ function cariTeks(cariKata){
             if(arrIsi.length <= index+29){
                 hasil = hasil + `Akhir dari hasil pencarian teks *${cari}*\n`
             }
-            hasil = hasil + `Page ${page} dari ${lastPage}`
+            hasil = hasil + `Halaman ${page} dari ${lastPage}`
         } 
 
         Step = 10; // Fix pesan
