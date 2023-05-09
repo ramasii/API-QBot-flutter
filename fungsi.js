@@ -123,7 +123,7 @@ function cariTeks(cariKata){
         Step = 1; // Ambil entity surah dan deklarasi variabel
         var arrSurah = Object.keys(alquran), 
         jml = 0, urut = 1, hasil = '', arrIsi = [], isi = '', actions = [],
-        cari = cariKata.split(':')[0].toLowerCase(), page = cariKata.split(':')[1] || 1
+        cari = cariKata.split(':')[0].toLowerCase(), page = Number(cariKata.split(':')[1]) || 1
         
         Step = 2; // Cek setiap surah
         arrSurah.forEach(surah =>{                 
