@@ -28,7 +28,8 @@ function ayatSekianSampaiSekian(entitySurah, dariIndex, sampaiIndex){
         Step = 4; // Jadikan object agar bisa bawa action (isi menu)
         var obj = {
             "answer":isi,
-            "actions":actions
+            "actions":actions,
+            "intent":"qurani.AyatSekianSampaiSekian"
         }
     
         return obj
@@ -105,7 +106,8 @@ function ayatAcak(){
                 {"action":`Tafsir Ringkas ${noSurah}:${noAyat}`},
                 {"action":`Share ${noSurah}:${noAyat}`},
                 {"action":`Bantuan`}
-            ]
+            ],
+            "intent":"qurani.ayatAcak"
         }
     
         return obj
@@ -171,7 +173,8 @@ function cariTeks(cariKata){
         Step = 11; // Jadikan object agar bisa bawa action (isi menu)
         var obj = {
             "answer":hasil,
-            "actions":actions
+            "actions":actions,
+            "intent":"qurani.cariTeks"
         }
 
         return obj

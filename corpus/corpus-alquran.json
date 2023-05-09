@@ -28,7 +28,7 @@
   },
   {
     "intent":"qurani.cariTeks",
-    "utterances":["cari surga", "cari "],
+    "utterances":["cari surga", "cari"],
     "tests":["cari neraka"],
     "answers":["jawaban di console.log"],
     "actions": ["@surah ayat @ayat","Bantuan"]
