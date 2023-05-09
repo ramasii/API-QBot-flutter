@@ -174,7 +174,9 @@ function cariTeks(cariKata){
         var obj = {
             "answer":hasil,
             "actions":actions,
-            "intent":"qurani.cariTeks"
+            "intent":"qurani.cariTeks",
+            "pageNow":page,
+            "pageMax":lastPage
         }
 
         return obj
