@@ -290,7 +290,8 @@ function shareAyat(entitySurah){
                     {"action":`Tafsir Ringkas ${noSurah}:${noAyat}`},
                     {"action":`${noSurah}:${noAyat}`},
                     {"action":`Bantuan`}
-                ]
+                ],
+                "intent":"qurani.shareAyat"
             }
 
             return obj
