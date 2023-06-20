@@ -43,7 +43,7 @@ app.get(`${point}/input`, async (req, res) => {
     var jawab = await ProsesNlp(input)
     res.send(jawab)
   }
-  else res.send('<h1>invalid client or API key</h1>')
+  else res.send('<h1>invalid client or API key.</h1>')
 });
 
 app.listen(port, () => {
