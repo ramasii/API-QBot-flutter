@@ -15,6 +15,7 @@ async function ProsesNlp(inputUser) {
         if (input != undefined) {
             Step = 2; // Proses nlp 
             const resN = await nlp.process(input.toLowerCase().replace(/(?<![a-z])\s+(?=\W|\d)/gi, '').replace(/(\s+|)-(\s+|)(?!\d)/gi, '').replace(/(\s+|)('|-)(\s+(?!aya(t|h|y))|)(?!\d)/gi, ''));
+            // console.log(resN);
             selfLog(resN.utterance, '\n\n', resN.answer);
             if (resN.intent == 'qurani.ayat') {
                 Step = 3; // Ayat tertentu
