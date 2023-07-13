@@ -31,7 +31,7 @@ async function ProsesNlp(inputUser) {
                 var arrAyat = alquran[surahKey].ayat;
                 console.log(arrAyat.length);
                 if (noAyat <= arrAyat.length) {
-                    var ayat = arrAyat[noAyat];
+                    var ayat = arrAyat[noAyat-1]; // kurangi 1 karena ngambil pakai index
                     var juz = ayat.juz;
                     var hal = ayat.page_num;
                     var terjemah = ayat.indonesia;
