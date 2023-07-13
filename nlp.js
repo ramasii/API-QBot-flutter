@@ -2,6 +2,8 @@ const { dockStart } = require('@nlpjs/basic')
 const { prosesOpenAI } = require('./openAI')
 const { ayatSekianSampaiSekian, informasiSurat, ayatAcak, cariTeks, nomorSurahAyatTertentu, nomorSurahTafsirAyatTertentu, nomorSurahInfoSurah, shareAyat, getNomorSurah, selfLog } = require('./fungsi')
 const infoSurah = require('./data/context-informasi.json')
+const alquran = require('./data/alquran.json')
+const { json } = require('express')
 
 async function ProsesNlp(inputUser) {
     const dock = await dockStart();
@@ -16,13 +18,27 @@ async function ProsesNlp(inputUser) {
             Step = 2; // Proses nlp 
             const resN = await nlp.process(input.toLowerCase().replace(/(?<![a-z])\s+(?=\W|\d)/gi, '').replace(/(\s+|)-(\s+|)(?!\d)/gi, '').replace(/(\s+|)('|-)(\s+(?!aya(t|h|y))|)(?!\d)/gi, ''));
             // console.log(resN);
-            selfLog(`intent: ${resN.intent}\n|\nanswer: ${resN.answer}`);
+            selfLog(`utterance: ${resN.utterance}\n|\nintent: ${resN.intent}\n|\nanswer: ${resN.answer}`);
             if (resN.intent == 'qurani.ayat') {
                 Step = 3; // Ayat tertentu
-                var noSurah = getNomorSurah(resN),
-                    noAyat = Number(resN.entities[resN.entities.length - 1].option) + 1,
-                    obj = {
-                        "answer": resN.answer,
+
+                var arrSurah = Object.keys(alquran);
+                var noSurah = getNomorSurah(resN);
+                var surahKey = arrSurah[noSurah - 1];
+                var noAyat = Number(resN.entities[resN.entities.length - 1].option) + 1;
+                var nmSurah = alquran[surahKey].nama;
+                var artiNm = alquran[surahKey].arti;
+                var arrAyat = alquran[surahKey].ayat;
+                console.log(arrAyat.length);
+                if (noAyat <= arrAyat.length) {
+                    var ayat = arrAyat[noAyat];
+                    var juz = ayat.juz;
+                    var hal = ayat.page_num;
+                    var terjemah = ayat.indonesia;
+                    var arab = ayat.indopak;
+                    console.log(`*${nmSurah}* (${artiNm}) surat ke ${Number(noSurah)} ayat *${Number(noAyat)}* juz ${juz} halaman ${hal}\n \n${arab}\n \n${terjemah}`);
+                    var obj = {
+                        "answer": `*${nmSurah}* (${artiNm}) surat ke ${Number(noSurah)} ayat *${Number(noAyat)}* juz ${juz} halaman ${hal}\n \n${arab}\n \n${terjemah}`,
                         "actions": [
                             { "action": `Tafsir Kemenag ${noSurah}:${noAyat}` },
                             { "action": `Tafsir Muyassar ${noSurah}:${noAyat}` },
@@ -33,24 +49,60 @@ async function ProsesNlp(inputUser) {
                         "intent": resN.intent
                     }
 
-                return obj
+                    return obj
+                }
+                else {
+                    var obj = {
+                        "answer": `Ayat tidak ditemukan. Surat *${nmSurah}** berjumlah **${arrAyat.length}** ayat saja.`,
+                        "actions": [
+                            { "action": `Tentang ${nmSurah}` },
+                            { "action": `Acak Ayat` },
+                            { "action": `Share Acak` },
+                            { "action": `Bantuan` }
+                        ],
+                        "intent": resN.intent
+                    }
+
+                    return obj
+                }
             }
             else if (resN.intent == 'nomorSurah.ayatTertentu') {
                 Step = 4; // NomorSurah ayat tertentu
-                noSurah = Number(resN.entities[0].option) + 1, noAyat = Number(resN.entities[resN.entities.length - 1].option) + 1
-                var obj = {
-                    "answer": nomorSurahAyatTertentu(noSurah - 1, noAyat - 1),
-                    "actions": [
-                        { "action": `Tafsir Kemenag ${noSurah}:${noAyat}` },
-                        { "action": `Tafsir Muyassar ${noSurah}:${noAyat}` },
-                        { "action": `Tafsir Jalalain ${noSurah}:${noAyat}` },
-                        { "action": `Tafsir Ringkas ${noSurah}:${noAyat}` },
-                        { "action": `Share ${noSurah}:${noAyat}` }
-                    ],
-                    "intent": resN.intent
-                }
+                var noSurah = Number(resN.entities[0].option) + 1
+                var noAyat = Number(resN.entities[resN.entities.length - 1].option) + 1
+                var arrSurah = Object.keys(alquran),
+                    entitySurah = arrSurah[noSurah-1],
+                    jsonQuran = alquran[entitySurah],
+                    nmSurah = jsonQuran.nama
+                var arrAyat = jsonQuran.ayat;
+                if (noAyat <= arrAyat.length) {
+                    var obj = {
+                        "answer": nomorSurahAyatTertentu(noSurah - 1, noAyat - 1),
+                        "actions": [
+                            { "action": `Tafsir Kemenag ${noSurah}:${noAyat}` },
+                            { "action": `Tafsir Muyassar ${noSurah}:${noAyat}` },
+                            { "action": `Tafsir Jalalain ${noSurah}:${noAyat}` },
+                            { "action": `Tafsir Ringkas ${noSurah}:${noAyat}` },
+                            { "action": `Share ${noSurah}:${noAyat}` }
+                        ],
+                        "intent": resN.intent
+                    }
+                    
+                    return obj
+                } else {
+                    var obj = {
+                        "answer": `Ayat tidak ditemukan. Surat *${nmSurah}** berjumlah **${arrAyat.length}** ayat saja.`,
+                        "actions": [
+                            { "action": `Tentang ${nmSurah}` },
+                            { "action": `Acak Ayat` },
+                            { "action": `Share Acak` },
+                            { "action": `Bantuan` }
+                        ],
+                        "intent": resN.intent
+                    }
 
-                return obj
+                    return obj
+                }
             }
             else if (resN.intent == 'qurani.perkenalan') {
                 Step = 5; // Perkenalan
