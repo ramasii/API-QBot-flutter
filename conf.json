@@ -14,5 +14,5 @@
         "serveBot": true      
       }
     },
-    "use": ["Basic", "LangEn","LangId", "ExpressApiServer", "DirectlineConnector", "ConsoleConnector"]
+    "use": ["Basic", "LangEn","LangId", "ExpressApiServer", "DirectlineConnector"]
 }

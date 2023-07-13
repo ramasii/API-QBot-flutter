@@ -130,7 +130,10 @@ function cariTeks(cariKata){
             Step = 3; // Cek jumlah ayat disetiap surah
             for(i = 0; i < alquran[surah].ayat.length; i++){
                 Step = 4; // Cek setiap ayat yang terkandung kata pencarian
-                if(alquran[surah].ayat[i].indonesia.match(RegExp(cari, 'gi'))){
+                if(alquran[surah].ayat[i].indonesia.match(RegExp(cari, 'gi'))
+                ||alquran[surah].ayat[i].indopak.match(RegExp(cari, 'gi'))
+                ||alquran[surah].ayat[i].teks.match(RegExp(cari, 'gi'))
+                ||alquran[surah].ayat[i].madinah.match(RegExp(cari, 'gi'))){
                     Step = 5; // Fix pesan
                     isi = `${urut}. ${alquran[surah].nama} ayat ${alquran[surah].ayat[i].nomorayat} halaman ${alquran[surah].ayat[i].page_num}\n`;
                     jml++; urut++;
