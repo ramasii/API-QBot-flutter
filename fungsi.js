@@ -170,6 +170,9 @@ function cariTeks(cariKata) {
         }
 
         Step = 10; // Fix pesan
+
+        cari = convertFromUnicode(cari);
+
         var pesan = `Teks *${cari}* di Al-Quran berjumlah *${jml}*, diantaranya:\n \n`
         hasil = jml > 0 ? pesan + hasil : `Teks *${cari}* tidak ditemukan. Ketik *bantuan* untuk melihat panduan IslamBot.`
 
@@ -188,6 +191,21 @@ function cariTeks(cariKata) {
         console.log(`cariTeks Step ${Step} : ${error}`);
     }
 }
+
+function isUnicode(text) {
+    return /[\u0080-\uffff]/.test(text);
+}  
+
+function convertFromUnicode(text) {
+    // Mengubah Unicode dengan format \uXXXX menjadi string biasa
+    var result = '';
+    var regex = /\\u([\d\w]{4})/gi;
+    text = text.replace(regex, function (match, group) {
+      return String.fromCharCode(parseInt(group, 16));
+    });
+    result = eval("'" + text + "'");
+    return result;
+  }
 
 function nomorSurahAyatTertentu(noSurah, noAyat) {
     var Step = 0;
@@ -340,4 +358,17 @@ function selfLog(teks) {
     console.log('------------------------------------------------');
 }
 
-module.exports = { selfLog, ayatSekianSampaiSekian, informasiSurat, ayatAcak, cariTeks, nomorSurahAyatTertentu, nomorSurahTafsirAyatTertentu, nomorSurahInfoSurah, shareAyat, getNomorSurah }
+// Mengubah string menjadi Unicode dengan format \uXXXX
+function convertToUnicode(text) {
+    var result = '';
+    for (var i = 0; i < text.length; i++) {
+      var unicode = text.charCodeAt(i).toString(16).toUpperCase();
+      while (unicode.length < 4) {
+        unicode = '0' + unicode;
+      }
+      result += '\\u' + unicode;
+    }
+    return result;
+  }
+
+module.exports = { isUnicode,convertFromUnicode,convertToUnicode,selfLog, ayatSekianSampaiSekian, informasiSurat, ayatAcak, cariTeks, nomorSurahAyatTertentu, nomorSurahTafsirAyatTertentu, nomorSurahInfoSurah, shareAyat, getNomorSurah }
