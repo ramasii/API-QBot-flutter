@@ -36,11 +36,11 @@ app.get(`${point}/share/:surat/:ayat`, (req, res) => {
 
 // input pakai teks
 app.get(`${point}/input`, async (req, res) => {
-  const { input, client, apikey } = req.query
+  const { input, client, apikey, language, tipe } = req.query
 
   //cek apikey
   if (checkKey(client, apikey)) {
-    var jawab = await ProsesNlp(input)
+    var jawab = await ProsesNlp(input, language, tipe)
     res.send(jawab)
   }
   else res.send('<h1>invalid client or API key.</h1>')

@@ -5,7 +5,7 @@ const infoSurah = require('./data/context-informasi.json')
 const alquran = require('./data/alquran.json')
 const { json } = require('express')
 
-async function ProsesNlp(inputUser) {
+async function ProsesNlp(inputUser, language, tipe) {
     const dock = await dockStart();
     const nlp = dock.get('nlp');
     await nlp.train()
@@ -17,8 +17,8 @@ async function ProsesNlp(inputUser) {
         if (input != undefined) {
             Step = 2; // Proses nlp 
             const resN = await nlp.process(input.toLowerCase().replace(/(?<![a-z])\s+(?=\W|\d)/gi, '').replace(/(\s+|)-(\s+|)(?!\d)/gi, '').replace(/(\s+|)('|-)(\s+(?!aya(t|h|y))|)(?!\d)/gi, ''));
-            // console.log(resN);
-            selfLog(`utterance: ${resN.utterance}\n|\nintent: ${resN.intent}\n|\nanswer: ${resN.answer}`);
+            console.log(resN);
+            // selfLog(`utterance: ${resN.utterance}\n|\nintent: ${resN.intent}\n|\nanswer: ${resN.answer}\n|\nlanguage: ${language}\n|\ntipe: ${tipe}`);
             if (resN.intent == 'qurani.ayat') {
                 Step = 3; // Ayat tertentu
 
@@ -371,11 +371,31 @@ async function ProsesNlp(inputUser) {
                     return shareAyat()
                 }
             }
+            else if (resN.intent == 'hadits.haditsTertentu' && (tipe == "H" || tipe == "ح")) {
+                Step = 24; // haditstertentu
+                var obj = {
+                    "answer": resN.answer,
+                    "actions": [
+                        { "action": `Acak Ayat` },
+                        { "action": `Share Acak` },
+                        { "action": `Bantuan` }
+                    ],
+                    "intent": resN.intent
+                }
+
+                return obj
+            }
             else if (resN.intent == 'None') {
                 Step = 23; // None
                 return {
                     "answer": resN.answer,
                     "intent": resN.intent
+                }
+            }else {
+                Step = 23; // None
+                return {
+                    "answer": "Maaf, *IslamBot* tidak memahami permintaan Anda. Ketik *bantuan* untuk melihat panduan IslamBot.",
+                    "intent": "None"
                 }
             }
         }

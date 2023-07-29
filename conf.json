@@ -6,7 +6,8 @@
           "./corpus/corpus-alquran.json",
           "./corpus/corpus-tafsir.json",
           "./corpus/corpus-informasi.json",
-          "./corpus/corpus-nomorsurah.json"
+          "./corpus/corpus-nomorsurah.json",
+          "./corpus/corpus-hadits.json"
         ]
       },
       "api-server": {
