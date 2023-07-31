@@ -5,14 +5,14 @@
     "data":[
         {
             "intent":"hadits.haditsTertentu",
-            "utterances":["hadits {{ perawi }} nomor {{ hnomor }}", "hadits {{ perawi }} {{ hnomor }}"],
+            "utterances":["hadits {{ perawi }} nomor {{ hnomor }}", "hadist {{ perawi }} {{ hnomor }}"],
             "tests":["tafsir bukhari nomor 1001"],
             "answers":["Hadits {{ _data[entities.perawi.option].nama }} nomor {{ entities.hnomor.utteranceText }}\n \n {{ _data[entities.perawi.option].hadits[entities.hnomor.utteranceText].arab}}\n \n{{ _data[entities.perawi.option].hadits[entities.hnomor.utteranceText].terjemahan }}"],
             "actions":[]
         }
     ],
     "entities": {
-        "hnomor": "/\\d+$/gi",
+        "hnomor": "/(?<=hadist.+|hadits.+)\\d+/gi",
         "perawi":{
             "options":{
                 "bukhari":["bukhari", "buhari", "buhori", "bukhori", "bukari", "bukori"]
