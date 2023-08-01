@@ -12,7 +12,7 @@
         }
     ],
     "entities": {
-        "hnomor": "/(?<=hadist.+|hadits.+)\\d+/gi",
+        "hnomor": "/(?<=hadist.+|hadits.+|hadis.+|hadish.+|hadit.+)\\d+/gi",
         "perawi":{
             "options":{
                 "bukhari":["bukhari", "buhari", "buhori", "bukhori", "bukari", "bukori"]
